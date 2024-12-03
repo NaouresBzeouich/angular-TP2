@@ -1,0 +1,22 @@
+<div [style.backgroundColor]="divColor">
+  Color
+</div>
+
+<input #inputColor (change)="changeColor(inputColor.value)" type="text" class="form-control">
+
+<button (click)="changeColor(defaultColor)" class="btn btn-warning">
+  reset
+</button>
+
+<br/><br/><br/><br/><br/><br/>
+<hr>
+<h4>
+  truc sympa :
+</h4>
+<input type="text" TrucSympaDirective class="form-control" placeholder="text" > 
+<br/><input type="number" TrucSympaDirective class="form-control"  placeholder="number" >
+<br/><input type="url" TrucSympaDirective class="form-control"  placeholder="url" >
+<br/><input type="email" TrucSympaDirective class="form-control"  placeholder="email" >
+<br/><input type="password" TrucSympaDirective class="form-control"  placeholder="password" ><br/>
+
+<input type="date" TrucSympaDirective class="form-control" >
