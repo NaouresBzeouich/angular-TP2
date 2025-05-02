@@ -1,21 +1,19 @@
-  apiVersion: apps/v1
-   kind: Deployment
-   metadata:
-     name: mon-app-deployment
-   spec:
-     replicas: 2
-     selector:
-matchLabels:
-         app: mon-app
-     template:
-       metadata:
-         labels:
-           app: mon-app
-       spec:
-         containers:
-       
- name: mon-app
-           image: votre-dockerhub/mon-app
-           ports:
-         
- containerPort: 80
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-project
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mon-app
+  template:
+    metadata:
+      labels:
+        app: mon-app
+    spec:
+      containers:
+        - name: mon-app
+          image: naouresbzeouich/Angular-resume-manager
+          ports:
+            - containerPort: 80
