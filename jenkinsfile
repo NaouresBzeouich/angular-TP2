@@ -1,15 +1,15 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'votre-dockerhub/mon-app'
+        DOCKER_IMAGE = 'naouresbzeouich/Angular-resume-manager'
     }
     stages {
         stage('Cloner le dépôt') {
             steps {
-git 'https://github.com/mon-depot/mon-app.git&#39;
+git 'https://github.com/NaouresBzeouich/angular-TP2.git';
             }
         }
-        stage('Construire l\'image Docker') {
+        stage('Construire l image Docker') {
             steps {
                 script {
                     sh 'docker build -t DOCKER_IMAGE .'
@@ -18,8 +18,8 @@ git 'https://github.com/mon-depot/mon-app.git&#39;
             steps
                 script
                     withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')])
-                        sh 'docker login -uDOCKER_USERNAME -p DOCKER_PASSWORD'
-                        sh 'docker pushDOCKER_IMAGE'
+                        sh 'docker login -u DOCKER_USERNAME -p DOCKER_PASSWORD'
+                        sh 'docker push DOCKER_IMAGE'
                     }
                 }
             }
